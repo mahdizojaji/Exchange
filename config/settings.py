@@ -30,14 +30,36 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(delimiter=','))
 
 
 # Application definition
-
-INSTALLED_APPS = [
+BUILT_IN_INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+THIRD_PARTY_INSTALLED_APPS = [
+
+]
+
+LOCAL_INSTALLED_APPS = [
+    'src.core.apps.CoreConfig',
+]
+
+LOCAL_PACKAGES = [
+
+]
+
+INSTALLED_APPS = [
+    # Built-in apps
+    *BUILT_IN_INSTALLED_APPS,
+    # Third-party apps
+    *THIRD_PARTY_INSTALLED_APPS,
+    # Local apps
+    *LOCAL_INSTALLED_APPS,
+    # Local Packages
+    *LOCAL_PACKAGES,
 ]
 
 MIDDLEWARE = [
@@ -123,3 +145,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Substituting a custom User model
+# https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-AUTH_USER_MODEL
+AUTH_USER_MODEL = 'core.User'

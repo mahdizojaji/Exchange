@@ -404,6 +404,7 @@ pip-selfcheck.json
 temp/
 tmp/
 *.env
+!sample.env
 .git/
 .samples/
 postgres_data/

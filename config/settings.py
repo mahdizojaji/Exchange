@@ -48,6 +48,7 @@ THIRD_PARTY_INSTALLED_APPS = [
 LOCAL_INSTALLED_APPS = [
     'src.core.apps.CoreConfig',
     'src.authentication.apps.AuthenticationConfig',
+    'src.exchange.apps.ExchangeConfig',
 ]
 
 LOCAL_PACKAGES = [
@@ -169,3 +170,6 @@ REST_AUTH = {
     'SESSION_LOGIN': False,
     'JWT_AUTH_HTTPONLY': False,
 }
+
+
+MINIMUM_ORDER_PRICE = 10

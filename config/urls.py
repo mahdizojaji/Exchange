@@ -21,5 +21,6 @@ app_name = 'config'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('core/', include('src.core.urls')),
+    path('', include('src.core.urls')),
+    path('', include('src.authentication.urls')),
 ]

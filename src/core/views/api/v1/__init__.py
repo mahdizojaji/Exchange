@@ -1,1 +1,1 @@
-from .user import UserListAPIView
+from .user import UserListAPIView, UserRetrieveAPIView, UserDetailsRetrieveUpdateAPIView

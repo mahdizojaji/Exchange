@@ -40,7 +40,7 @@ BUILT_IN_INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_INSTALLED_APPS = [
-
+    'rest_framework',
 ]
 
 LOCAL_INSTALLED_APPS = [
@@ -149,3 +149,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Substituting a custom User model
 # https://docs.djangoproject.com/en/4.2/ref/settings/#std-setting-AUTH_USER_MODEL
 AUTH_USER_MODEL = 'core.User'
+
+# Django rest framework settings
+# https://www.django-rest-framework.org/api-guide/settings/
+REST_FRAMEWORK = {
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
